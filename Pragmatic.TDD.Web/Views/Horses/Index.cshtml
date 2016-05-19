@@ -1,0 +1,51 @@
+﻿@model IEnumerable<Pragmatic.TDD.Web.Models.HorseSummary>
+@{
+    ViewBag.Title = "Horses";
+}
+<h2>@ViewBag.Title</h2>
+<h3>@ViewBag.Message</h3>
+
+@if (Model != null)
+{
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th class="col-md-1">Detail</th>
+                <th class="col-md-3">Name</th>
+                <th class="col-md-2">Color</th>
+                <th class="col-md-3">Dam</th>
+                <th class="col-md-3">Sire</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        <a href="@Url.Action("Horse", "Horses", new {id = item.Id})">
+                            <i class="glyphicon glyphicon-list"></i>
+                        </a>
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Color)
+                    </td>
+                    <td>
+                        @if (item.DamId.HasValue)
+                        {
+                            @Html.ActionLink(item.Dam, "Horse", new { id = item.DamId.Value })
+                        }
+                    </td>
+                    <td>
+                        @if (item.SireId.HasValue)
+                        {
+                            @Html.ActionLink(item.Sire, "Horse", new { id = item.SireId.Value })
+                        }
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

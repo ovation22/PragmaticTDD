@@ -1,0 +1,15 @@
+﻿@model Pragmatic.TDD.Web.Models.HorseDetail
+
+@{
+    ViewBag.Title = "Detail";
+}
+<h2>@Model.Name</h2>
+<h3>@Model.Color</h3>
+@if (Model.DamId.HasValue)
+{
+    @Html.ActionLink(Model.Dam, "Horse", new {id = Model.DamId.Value})<br/>
+}
+@if (Model.SireId.HasValue)
+{
+    @Html.ActionLink(Model.Sire, "Horse", new { id = Model.SireId.Value })<br />
+}

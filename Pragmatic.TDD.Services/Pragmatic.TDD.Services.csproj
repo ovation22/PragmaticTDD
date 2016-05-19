@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B29D3D97-3EF9-4FF5-8FD5-42970D457DFD}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Pragmatic.TDD.Services</RootNamespace>
+    <AssemblyName>Pragmatic.TDD.Services</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="HorseService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Pragmatic.TDD.Dto\Pragmatic.TDD.Dto.csproj">
+      <Project>{6F8C1565-4A30-44A5-9918-519AA0A2EAAE}</Project>
+      <Name>Pragmatic.TDD.Dto</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Pragmatic.TDD.Models\Pragmatic.TDD.Models.csproj">
+      <Project>{6c708028-79f7-47bf-99bf-ba70333d93b2}</Project>
+      <Name>Pragmatic.TDD.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Pragmatic.TDD.Repositories.Interfaces\Pragmatic.TDD.Repositories.Interfaces.csproj">
+      <Project>{EE8B5478-D372-494D-A49B-9DD8C8DC5CA6}</Project>
+      <Name>Pragmatic.TDD.Repositories.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Pragmatic.TDD.Services.Interfaces\Pragmatic.TDD.Services.Interfaces.csproj">
+      <Project>{D6D8BC28-B2C9-4B3D-A8A2-030624555246}</Project>
+      <Name>Pragmatic.TDD.Services.Interfaces</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
