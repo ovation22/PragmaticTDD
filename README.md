@@ -2,12 +2,12 @@
 
 TDD: A Pragmatic Approach is an example used for User Groups and Meetups.
 
-## Prerequisite:
+## Prerequisite
 - Visual Studio 2015
 - SQL Server
 - SQL Server Data Tools
 
-## Technologies and frameworks used:
+## Technologies and frameworks used
 - ASP.NET MVC
 - Entity Framework 6.1.3
 - Autofac 3.5.2
