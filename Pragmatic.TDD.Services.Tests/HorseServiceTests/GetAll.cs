@@ -49,13 +49,13 @@ namespace Pragmatic.TDD.Services.Tests.HorseServiceTests
             var horse = horses.First();
 
             // Assert
-            Assert.AreEqual(horse.Id, 1);
-            Assert.AreEqual(horse.Name, "Man o' War");
-            Assert.AreEqual(horse.Color, "Chestnut");
-            Assert.AreEqual(horse.DamId, 2);
-            Assert.AreEqual(horse.Dam, "Dam");
-            Assert.AreEqual(horse.SireId, 3);
-            Assert.AreEqual(horse.Sire, "Sire");
+            Assert.AreEqual(1, horse.Id);
+            Assert.AreEqual("Man o' War", horse.Name);
+            Assert.AreEqual("Chestnut", horse.Color);
+            Assert.AreEqual(2, horse.DamId);
+            Assert.AreEqual("Dam", horse.Dam);
+            Assert.AreEqual(3, horse.SireId);
+            Assert.AreEqual("Sire", horse.Sire);
         }
     }
 }
