@@ -46,9 +46,9 @@ namespace Pragmatic.TDD.Services.Tests.HorseServiceTests
             var horse = _horseService.Get(1);
 
             // Assert
-            Assert.AreEqual(horse.Id, 1);
-            Assert.AreEqual(horse.Name, "Man o' War");
-            Assert.AreEqual(horse.Color, "Chestnut");
+            Assert.AreEqual(1, horse.Id);
+            Assert.AreEqual("Man o' War", horse.Name);
+            Assert.AreEqual("Chestnut", horse.Color);
         }
     }
 }
