@@ -12,6 +12,19 @@ TDD: A Pragmatic Approach is an example used for User Groups and Meetups.
 - Entity Framework 6.1.3
 - Autofac 3.5.2
 
+## Homework
+
+Procede one step at a time. Do not skip ahead.
+- Add Earnings to Horses page
+- Add Race Starts to Horses page
+- Add Earnings to Horse Detail page
+- Add Race Starts to Horse Detail page
+- Add Race Wins to Horse Detail page
+- Add Race Places to Horse Detail page
+- Add Race Shows to Horse Detail page
+- Add Colors page showing list of all Colors
+- Add Color Detail page showing all horses of selected Color
+
 ## Copyright
 
 Copyright © 2016 John Callaway and contributors
