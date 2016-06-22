@@ -39,7 +39,7 @@ namespace Pragmatic.TDD.Services.Tests.HorseServiceTests
         }
 
         [TestMethod]
-        public void ItMapsProperties()
+        public void ItReturnsId()
         {
             // Arrange
             // Act
@@ -47,7 +47,27 @@ namespace Pragmatic.TDD.Services.Tests.HorseServiceTests
 
             // Assert
             Assert.AreEqual(1, horse.Id);
+        }
+
+        [TestMethod]
+        public void ItReturnsName()
+        {
+            // Arrange
+            // Act
+            var horse = _horseService.Get(1);
+
+            // Assert
             Assert.AreEqual("Man o' War", horse.Name);
+        }
+
+        [TestMethod]
+        public void ItReturnsColor()
+        {
+            // Arrange
+            // Act
+            var horse = _horseService.Get(1);
+
+            // Assert
             Assert.AreEqual("Chestnut", horse.Color);
         }
     }

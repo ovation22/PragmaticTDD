@@ -80,7 +80,7 @@ namespace Pragmatic.TDD.Web.Tests.Controllers.HorsesControllerTests
         }
 
         [TestMethod]
-        public void ItMapsId()
+        public void ItReturnsId()
         {
             // Arrange
             // Act
@@ -93,7 +93,7 @@ namespace Pragmatic.TDD.Web.Tests.Controllers.HorsesControllerTests
         }
 
         [TestMethod]
-        public void ItMapsName()
+        public void ItReturnsName()
         {
             // Arrange
             // Act
@@ -106,7 +106,7 @@ namespace Pragmatic.TDD.Web.Tests.Controllers.HorsesControllerTests
         }
 
         [TestMethod]
-        public void ItMapsColor()
+        public void ItReturnsColor()
         {
             // Arrange
             // Act
@@ -119,7 +119,7 @@ namespace Pragmatic.TDD.Web.Tests.Controllers.HorsesControllerTests
         }
 
         [TestMethod]
-        public void ItMapsDamId()
+        public void ItReturnsDamId()
         {
             // Arrange
             // Act
@@ -132,7 +132,7 @@ namespace Pragmatic.TDD.Web.Tests.Controllers.HorsesControllerTests
         }
 
         [TestMethod]
-        public void ItMapsDamName()
+        public void ItReturnsDamName()
         {
             // Arrange
             // Act
@@ -145,7 +145,7 @@ namespace Pragmatic.TDD.Web.Tests.Controllers.HorsesControllerTests
         }
 
         [TestMethod]
-        public void ItMapsSireId()
+        public void ItReturnsSireId()
         {
             // Arrange
             // Act
@@ -158,7 +158,7 @@ namespace Pragmatic.TDD.Web.Tests.Controllers.HorsesControllerTests
         }
 
         [TestMethod]
-        public void ItMapsSireName()
+        public void ItReturnsSireName()
         {
             // Arrange
             // Act

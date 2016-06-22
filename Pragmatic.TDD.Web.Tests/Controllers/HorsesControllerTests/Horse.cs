@@ -78,7 +78,7 @@ namespace Pragmatic.TDD.Web.Tests.Controllers.HorsesControllerTests
         }
 
         [TestMethod]
-        public void ItMaps()
+        public void ItReturnsId()
         {
             // Arrange
             // Act
@@ -88,11 +88,83 @@ namespace Pragmatic.TDD.Web.Tests.Controllers.HorsesControllerTests
             Assert.IsNotNull(result);
             var horse = ((Models.HorseDetail)result.ViewData.Model);
             Assert.AreEqual(1, horse.Id);
+        }
+
+        [TestMethod]
+        public void ItReturnsName()
+        {
+            // Arrange
+            // Act
+            var result = _controller.Horse(1) as ViewResult;
+
+            // Assert
+            Assert.IsNotNull(result);
+            var horse = ((Models.HorseDetail)result.ViewData.Model);
             Assert.AreEqual("Man o' War", horse.Name);
+        }
+
+        [TestMethod]
+        public void ItReturnsColor()
+        {
+            // Arrange
+            // Act
+            var result = _controller.Horse(1) as ViewResult;
+
+            // Assert
+            Assert.IsNotNull(result);
+            var horse = ((Models.HorseDetail)result.ViewData.Model);
             Assert.AreEqual("Chestnut", horse.Color);
+        }
+
+        [TestMethod]
+        public void ItReturnsDamId()
+        {
+            // Arrange
+            // Act
+            var result = _controller.Horse(1) as ViewResult;
+
+            // Assert
+            Assert.IsNotNull(result);
+            var horse = ((Models.HorseDetail)result.ViewData.Model);
             Assert.AreEqual(2, horse.DamId);
+        }
+
+        [TestMethod]
+        public void ItReturnsDamName()
+        {
+            // Arrange
+            // Act
+            var result = _controller.Horse(1) as ViewResult;
+
+            // Assert
+            Assert.IsNotNull(result);
+            var horse = ((Models.HorseDetail)result.ViewData.Model);
             Assert.AreEqual("Dam", horse.Dam);
+        }
+
+        [TestMethod]
+        public void ItReturnsSireId()
+        {
+            // Arrange
+            // Act
+            var result = _controller.Horse(1) as ViewResult;
+
+            // Assert
+            Assert.IsNotNull(result);
+            var horse = ((Models.HorseDetail)result.ViewData.Model);
             Assert.AreEqual(3, horse.SireId);
+        }
+
+        [TestMethod]
+        public void ItReturnsSireName()
+        {
+            // Arrange
+            // Act
+            var result = _controller.Horse(1) as ViewResult;
+
+            // Assert
+            Assert.IsNotNull(result);
+            var horse = ((Models.HorseDetail)result.ViewData.Model);
             Assert.AreEqual("Sire", horse.Sire);
         }
     }

@@ -41,7 +41,7 @@ namespace Pragmatic.TDD.Services.Tests.HorseServiceTests
         }
 
         [TestMethod]
-        public void ItMapsProperties()
+        public void ItReturnsId()
         {
             // Arrange
             // Act
@@ -50,11 +50,77 @@ namespace Pragmatic.TDD.Services.Tests.HorseServiceTests
             // Assert
             var horse = horses.First(x => x.Id == 1);
             Assert.AreEqual(1, horse.Id);
+        }
+
+        [TestMethod]
+        public void ItReturnsName()
+        {
+            // Arrange
+            // Act
+            var horses = _horseService.GetAll();
+
+            // Assert
+            var horse = horses.First(x => x.Id == 1);
             Assert.AreEqual("Man o' War", horse.Name);
+        }
+
+        [TestMethod]
+        public void ItReturnsColor()
+        {
+            // Arrange
+            // Act
+            var horses = _horseService.GetAll();
+
+            // Assert
+            var horse = horses.First(x => x.Id == 1);
             Assert.AreEqual("Chestnut", horse.Color);
+        }
+
+        [TestMethod]
+        public void ItReturnsDamId()
+        {
+            // Arrange
+            // Act
+            var horses = _horseService.GetAll();
+
+            // Assert
+            var horse = horses.First(x => x.Id == 1);
             Assert.AreEqual(2, horse.DamId);
+        }
+
+        [TestMethod]
+        public void ItReturnsDamName()
+        {
+            // Arrange
+            // Act
+            var horses = _horseService.GetAll();
+
+            // Assert
+            var horse = horses.First(x => x.Id == 1);
             Assert.AreEqual("Dam", horse.Dam);
+        }
+
+        [TestMethod]
+        public void ItReturnsSireId()
+        {
+            // Arrange
+            // Act
+            var horses = _horseService.GetAll();
+
+            // Assert
+            var horse = horses.First(x => x.Id == 1);
             Assert.AreEqual(3, horse.SireId);
+        }
+
+        [TestMethod]
+        public void ItReturnsSireName()
+        {
+            // Arrange
+            // Act
+            var horses = _horseService.GetAll();
+
+            // Assert
+            var horse = horses.First(x => x.Id == 1);
             Assert.AreEqual("Sire", horse.Sire);
         }
     }
