@@ -13,7 +13,7 @@ namespace Pragmatic.TDD.Services.Tests.HorseServiceTests
         private IHorseService _horseService;
 
         [TestInitialize]
-        public void Setup()
+        public void TestSetup()
         {
             HorseFactory.Create(Context).WithColor().WithDam().WithSire();
 
@@ -46,9 +46,9 @@ namespace Pragmatic.TDD.Services.Tests.HorseServiceTests
             // Arrange
             // Act
             var horses = _horseService.GetAll();
-            var horse = horses.First();
 
             // Assert
+            var horse = horses.First(x => x.Id == 1);
             Assert.AreEqual(1, horse.Id);
             Assert.AreEqual("Man o' War", horse.Name);
             Assert.AreEqual("Chestnut", horse.Color);

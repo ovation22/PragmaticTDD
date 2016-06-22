@@ -11,7 +11,7 @@ namespace Pragmatic.TDD.Services.Tests.HorseServiceTests
         private IHorseService _horseService;
 
         [TestInitialize]
-        public void Setup()
+        public void TestSetup()
         {
             HorseFactory.Create(Context).WithColor();
 

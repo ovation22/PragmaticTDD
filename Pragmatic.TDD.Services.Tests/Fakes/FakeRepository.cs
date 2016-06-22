@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using Pragmatic.TDD.Repositories.Interfaces;
 
@@ -81,8 +80,7 @@ namespace Pragmatic.TDD.Services.Tests.Fakes
             return typeof(T).GetProperties()
                 .Any(
                     x =>
-                        x.Name.Equals("Id", StringComparison.OrdinalIgnoreCase)
-                        && x.PropertyType == typeof(TKey)
+                        x.PropertyType == typeof(TKey)
                         && x.GetValue(entity, null).Equals(id));
         }
     }

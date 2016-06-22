@@ -12,14 +12,12 @@ namespace Pragmatic.TDD.Web.Tests.Controllers.HorsesControllerTests
     [TestClass]
     public class Index
     {
-        private Mock<IHorseService> _horseService;
         private HorsesController _controller;
+        private static Mock<IHorseService> _horseService;
 
-        [TestInitialize]
-        public void Setup()
+        [ClassInitialize]
+        public static void ClassSetup(TestContext testContext)
         {
-            var horseToHorseDetailMapper = new HorseToHorseDetailMapper();
-            var horseToHorseSummaryMapper = new HorseToHorseSummaryMapper();
             var horse = new Dto.Horse
             {
                 Id = 1,
@@ -33,6 +31,13 @@ namespace Pragmatic.TDD.Web.Tests.Controllers.HorsesControllerTests
 
             _horseService = new Mock<IHorseService>();
             _horseService.Setup(x => x.GetAll()).Returns(() => new List<Dto.Horse> { horse });
+        }
+
+        [TestInitialize]
+        public void TestSetup()
+        {
+            var horseToHorseDetailMapper = new HorseToHorseDetailMapper();
+            var horseToHorseSummaryMapper = new HorseToHorseSummaryMapper();
 
             _controller = new HorsesController(_horseService.Object,
                 horseToHorseDetailMapper,
@@ -63,7 +68,19 @@ namespace Pragmatic.TDD.Web.Tests.Controllers.HorsesControllerTests
         }
 
         [TestMethod]
-        public void ItMaps()
+        public void ItReturnsCollectionOfHorses()
+        {
+            // Arrange
+            // Act
+            var result = _controller.Index() as ViewResult;
+
+            // Assert
+            Assert.IsNotNull(result);
+            Assert.IsInstanceOfType(result.ViewData.Model, typeof(IEnumerable<Models.HorseSummary>));
+        }
+
+        [TestMethod]
+        public void ItMapsId()
         {
             // Arrange
             // Act
@@ -73,11 +90,83 @@ namespace Pragmatic.TDD.Web.Tests.Controllers.HorsesControllerTests
             Assert.IsNotNull(result);
             var horse = ((IEnumerable<Models.HorseSummary>)result.ViewData.Model).Single();
             Assert.AreEqual(1, horse.Id);
+        }
+
+        [TestMethod]
+        public void ItMapsName()
+        {
+            // Arrange
+            // Act
+            var result = _controller.Index() as ViewResult;
+
+            // Assert
+            Assert.IsNotNull(result);
+            var horse = ((IEnumerable<Models.HorseSummary>)result.ViewData.Model).Single();
             Assert.AreEqual("Man o' War", horse.Name);
+        }
+
+        [TestMethod]
+        public void ItMapsColor()
+        {
+            // Arrange
+            // Act
+            var result = _controller.Index() as ViewResult;
+
+            // Assert
+            Assert.IsNotNull(result);
+            var horse = ((IEnumerable<Models.HorseSummary>)result.ViewData.Model).Single();
             Assert.AreEqual("Chestnut", horse.Color);
+        }
+
+        [TestMethod]
+        public void ItMapsDamId()
+        {
+            // Arrange
+            // Act
+            var result = _controller.Index() as ViewResult;
+
+            // Assert
+            Assert.IsNotNull(result);
+            var horse = ((IEnumerable<Models.HorseSummary>)result.ViewData.Model).Single();
             Assert.AreEqual(2, horse.DamId);
+        }
+
+        [TestMethod]
+        public void ItMapsDamName()
+        {
+            // Arrange
+            // Act
+            var result = _controller.Index() as ViewResult;
+
+            // Assert
+            Assert.IsNotNull(result);
+            var horse = ((IEnumerable<Models.HorseSummary>)result.ViewData.Model).Single();
             Assert.AreEqual("Dam", horse.Dam);
+        }
+
+        [TestMethod]
+        public void ItMapsSireId()
+        {
+            // Arrange
+            // Act
+            var result = _controller.Index() as ViewResult;
+
+            // Assert
+            Assert.IsNotNull(result);
+            var horse = ((IEnumerable<Models.HorseSummary>)result.ViewData.Model).Single();
             Assert.AreEqual(3, horse.SireId);
+        }
+
+        [TestMethod]
+        public void ItMapsSireName()
+        {
+            // Arrange
+            // Act
+            var result = _controller.Index() as ViewResult;
+
+            // Assert
+            Assert.IsNotNull(result);
+            var horse = ((IEnumerable<Models.HorseSummary>)result.ViewData.Model).Single();
             Assert.AreEqual("Sire", horse.Sire);
         }
     }

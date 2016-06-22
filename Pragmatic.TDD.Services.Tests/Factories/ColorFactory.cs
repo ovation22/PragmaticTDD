@@ -5,7 +5,7 @@ namespace Pragmatic.TDD.Services.Tests.Factories
 {
     public static class ColorFactory
     {
-        public static Models.Color Create(FakeDataContext context, byte id = 2, string name = "Chestnut")
+        public static Models.Color Create(FakeDataContext context, byte id = 4, string name = "Chestnut")
         {
             Setup(context);
 

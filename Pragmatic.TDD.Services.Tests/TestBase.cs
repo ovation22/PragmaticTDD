@@ -15,18 +15,18 @@ namespace Pragmatic.TDD.Services.Tests
         {
             get
             {
-                if (_container == null)
-                {
-                    var builder = new ContainerBuilder();
+                if (_container != null)
+                    return _container;
 
-                    RegisterFakes(builder);
-                    RegisterRepository(builder);
-                    RegisterServices(builder);
+                var builder = new ContainerBuilder();
 
-                    var container = builder.Build();
+                RegisterFakes(builder);
+                RegisterRepository(builder);
+                RegisterServices(builder);
 
-                    _container = container;
-                }
+                var container = builder.Build();
+
+                _container = container;
 
                 return _container;
             }
@@ -48,7 +48,6 @@ namespace Pragmatic.TDD.Services.Tests
         {
             builder.RegisterType<FakeDataContext>().AsSelf().SingleInstance();
             builder.RegisterType<FakeDataContextBase>().AsSelf().SingleInstance();
-            //TODO: builder.RegisterType<FakeTimeManager>().As<ITimeManager>().SingleInstance();
         }
     }
 }
