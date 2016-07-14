@@ -36,3 +36,9 @@ This project is licensed under [MIT](http://www.opensource.org/licenses/mit-lice
 ## Slide deck
 
 Please see the accompanying slide deck https://speakerdeck.com/ovation22/tdd-a-pragmatic-approach
+
+## Katas
+
+http://butunclebob.com/ArticleS.UncleBob.TheBowlingGameKata
+
+http://osherove.com/tdd-kata-1/
