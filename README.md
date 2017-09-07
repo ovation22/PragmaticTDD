@@ -1,7 +1,5 @@
 # PragmaticTDD
 
-[![Build status](https://travis-ci.org/ovation22/PragmaticTDD.svg?branch=master)](https://travis-ci.org/ovation22/PragmaticTDD)
-
 TDD: A Pragmatic Approach is an example used for User Groups and Meetups.
 
 ## Prerequisite
